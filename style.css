@@ -44,21 +44,48 @@ html, body {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #ff2d95;
-    text-shadow: 0 0 15px rgba(255, 45, 149, 0.5);
+    text-shadow: 0 0 10px rgba(255, 45, 149, 0.8), 0 0 30px rgba(255, 45, 149, 0.5);
     background: none;
-    border: 1px solid rgba(255, 45, 149, 0.4);
-    box-shadow: 0 0 20px rgba(255, 45, 149, 0.15);
+    border: 2px solid #ff2d95;
+    box-shadow:
+        0 0 15px rgba(255, 45, 149, 0.4),
+        0 0 40px rgba(255, 45, 149, 0.2),
+        0 0 80px rgba(255, 45, 149, 0.1),
+        inset 0 0 20px rgba(255, 45, 149, 0.1);
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     cursor: pointer;
     transition: all 0.3s ease;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow:
+            0 0 15px rgba(255, 45, 149, 0.4),
+            0 0 40px rgba(255, 45, 149, 0.2),
+            0 0 80px rgba(255, 45, 149, 0.1),
+            inset 0 0 20px rgba(255, 45, 149, 0.1);
+    }
+    50% {
+        box-shadow:
+            0 0 25px rgba(255, 45, 149, 0.6),
+            0 0 60px rgba(255, 45, 149, 0.35),
+            0 0 100px rgba(255, 45, 149, 0.15),
+            inset 0 0 30px rgba(255, 45, 149, 0.15);
+    }
 }
 
 .start-btn:hover {
-    border-color: #ff2d95;
-    box-shadow: 0 0 30px rgba(255, 45, 149, 0.3);
-    text-shadow: 0 0 20px rgba(255, 45, 149, 0.7);
+    border-color: #fff;
+    box-shadow:
+        0 0 30px rgba(255, 45, 149, 0.7),
+        0 0 80px rgba(255, 45, 149, 0.4),
+        0 0 120px rgba(255, 45, 149, 0.2),
+        inset 0 0 40px rgba(255, 45, 149, 0.2);
+    text-shadow: 0 0 15px rgba(255, 45, 149, 1), 0 0 40px rgba(255, 45, 149, 0.7);
+    animation: none;
 }
 
 /* Background video */
