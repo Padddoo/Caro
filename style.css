@@ -88,6 +88,8 @@ html, body {
     font-weight: 300;
     letter-spacing: -0.01em;
     line-height: 1.1;
+    color: #ff2d95;
+    text-shadow: 0 0 20px rgba(255, 45, 149, 0.6), 0 0 60px rgba(255, 45, 149, 0.3);
 }
 
 .brand-tagline {
