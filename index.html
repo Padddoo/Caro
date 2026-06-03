@@ -11,13 +11,21 @@
 </head>
 <body>
 
-    <video class="bg-video" autoplay muted loop playsinline>
+    <div class="start-screen" id="startScreen">
+        <button class="start-btn" id="startBtn">Play</button>
+    </div>
+
+    <audio id="bgMusic" preload="auto">
+        <source src="Hip-Hop Lofi.wav" type="audio/wav">
+    </audio>
+
+    <video class="bg-video" id="bgVideo" muted loop playsinline>
         <source src="hip-hop-dancer.mov" type="video/quicktime">
     </video>
     <div class="bg-overlay"></div>
 
     <div class="page">
-        <nav class="nav">
+        <nav class="nav" id="nav">
             <a href="#" class="nav-item" onclick="return false">
                 <span class="nav-number">01</span>
                 <span class="nav-label">Über mich</span>
@@ -29,10 +37,55 @@
         </nav>
 
         <div class="brand">
-            <p class="brand-name">Caro.</p>
-            <p class="brand-tagline">Freestyle. Hip Hop. Fun.</p>
+            <p class="brand-name" id="brandName">Caro.</p>
+            <p class="brand-tagline">
+                <span class="tagline-word" id="word1">Freestyle.</span>
+                <span class="tagline-word" id="word2">Hip Hop.</span>
+                <span class="tagline-word" id="word3">Fun.</span>
+            </p>
         </div>
     </div>
 
+    <script>
+        const startScreen = document.getElementById('startScreen');
+        const startBtn = document.getElementById('startBtn');
+        const music = document.getElementById('bgMusic');
+        const video = document.getElementById('bgVideo');
+        const brandName = document.getElementById('brandName');
+        const word1 = document.getElementById('word1');
+        const word2 = document.getElementById('word2');
+        const word3 = document.getElementById('word3');
+        const nav = document.getElementById('nav');
+
+        startBtn.addEventListener('click', () => {
+            startScreen.classList.add('hidden');
+            music.play();
+
+            setTimeout(() => {
+                brandName.classList.add('visible');
+            }, 3000);
+
+            setTimeout(() => {
+                word1.classList.add('visible');
+            }, 4200);
+
+            setTimeout(() => {
+                word2.classList.add('visible');
+            }, 5200);
+
+            setTimeout(() => {
+                word3.classList.add('visible');
+            }, 6200);
+
+            setTimeout(() => {
+                nav.classList.add('visible');
+            }, 7200);
+
+            setTimeout(() => {
+                video.play();
+                video.classList.add('visible');
+            }, 8000);
+        });
+    </script>
 </body>
 </html>

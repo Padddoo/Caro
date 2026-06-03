@@ -15,6 +15,45 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Start screen */
+.start-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+.start-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.start-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Background video */
 .bg-video {
     position: fixed;
     inset: 0;
@@ -23,6 +62,12 @@ html, body {
     object-fit: cover;
     filter: grayscale(100%);
     z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.bg-video.visible {
+    opacity: 1;
 }
 
 .bg-overlay {
@@ -32,24 +77,31 @@ html, body {
     z-index: 1;
 }
 
+/* Page layout */
 .page {
     position: relative;
     z-index: 2;
     min-height: 100vh;
     padding: 40px 48px;
-}
-
-.page {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Navigation */
 .nav {
     display: flex;
     flex-direction: column;
     gap: 16px;
     align-self: flex-end;
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.nav.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .nav-item {
@@ -79,6 +131,7 @@ html, body {
     letter-spacing: 0.03em;
 }
 
+/* Brand */
 .brand {
     align-self: flex-start;
 }
@@ -90,28 +143,51 @@ html, body {
     line-height: 1.1;
     color: #ff2d95;
     text-shadow: 0 0 20px rgba(255, 45, 149, 0.6), 0 0 60px rgba(255, 45, 149, 0.3);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.brand-name.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .brand-tagline {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.tagline-word {
     font-size: clamp(0.8rem, 1.2vw, 0.95rem);
     font-weight: 300;
     color: rgba(255, 255, 255, 0.5);
     letter-spacing: 0.05em;
-    margin-top: 8px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.tagline-word.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     .bg-video {
         display: none;
     }
 }
 
+/* Responsive */
 @media (max-width: 480px) {
     .page {
         padding: 24px 20px;
     }
 
     .nav {
-        gap: 24px;
+        gap: 12px;
     }
 }
