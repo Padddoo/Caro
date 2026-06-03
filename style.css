@@ -135,7 +135,7 @@ html, body {
 .brand {
     align-self: flex-start;
     margin-top: auto;
-    margin-bottom: 35vh;
+    margin-bottom: 20vh;
 }
 
 .brand-name {
@@ -164,16 +164,22 @@ html, body {
 .tagline-word {
     font-size: clamp(0.8rem, 1.2vw, 0.95rem);
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.5);
+    color: #ff2d95;
+    text-shadow: 0 0 15px rgba(255, 45, 149, 0.5), 0 0 40px rgba(255, 45, 149, 0.2);
     letter-spacing: 0.05em;
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease, color 1.5s ease, text-shadow 1.5s ease;
 }
 
 .tagline-word.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.tagline-word.dim {
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: none;
 }
 
 /* Reduced motion */
