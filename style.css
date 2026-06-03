@@ -38,9 +38,11 @@ html, body {
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+    color: #ff2d95;
+    text-shadow: 0 0 15px rgba(255, 45, 149, 0.5);
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 45, 149, 0.4);
+    box-shadow: 0 0 20px rgba(255, 45, 149, 0.15);
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -49,8 +51,9 @@ html, body {
 }
 
 .start-btn:hover {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.6);
+    border-color: #ff2d95;
+    box-shadow: 0 0 30px rgba(255, 45, 149, 0.3);
+    text-shadow: 0 0 20px rgba(255, 45, 149, 0.7);
 }
 
 /* Background video */
