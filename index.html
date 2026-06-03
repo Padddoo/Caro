@@ -26,6 +26,10 @@
 
     <div class="page">
         <nav class="nav" id="nav">
+            <a href="#" class="nav-item" id="muteToggle">
+                <span class="nav-number">00</span>
+                <span class="nav-label" id="muteLabel">Stumm</span>
+            </a>
             <a href="#" class="nav-item" onclick="return false">
                 <span class="nav-number">01</span>
                 <span class="nav-label">Über mich</span>
@@ -56,6 +60,14 @@
         const word2 = document.getElementById('word2');
         const word3 = document.getElementById('word3');
         const nav = document.getElementById('nav');
+        const muteToggle = document.getElementById('muteToggle');
+        const muteLabel = document.getElementById('muteLabel');
+
+        muteToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            music.muted = !music.muted;
+            muteLabel.textContent = music.muted ? 'Laut' : 'Stumm';
+        });
 
         startBtn.addEventListener('click', () => {
             startScreen.classList.add('hidden');
