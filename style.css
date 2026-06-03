@@ -39,10 +39,17 @@ html, body {
     padding: 40px 48px;
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .nav {
     display: flex;
-    gap: 32px;
-    justify-content: flex-end;
+    flex-direction: column;
+    gap: 16px;
+    align-self: flex-end;
 }
 
 .nav-item {
@@ -70,6 +77,25 @@ html, body {
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.03em;
+}
+
+.brand {
+    align-self: flex-start;
+}
+
+.brand-name {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+.brand-tagline {
+    font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.05em;
+    margin-top: 8px;
 }
 
 @media (prefers-reduced-motion: reduce) {
