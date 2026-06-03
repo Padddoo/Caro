@@ -234,3 +234,9 @@ html, body {
         gap: 12px;
     }
 }
+
+@media (orientation: portrait) {
+    .brand {
+        margin-bottom: 25vh;
+    }
+}
