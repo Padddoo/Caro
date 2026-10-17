@@ -29,7 +29,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .back {
@@ -61,25 +61,66 @@
             letter-spacing: -0.01em;
         }
 
-        .page-subtitle {
-            font-size: 0.85rem;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 6px;
-        }
-
-        .video-container {
+        .content {
             flex: 1;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 40px;
         }
 
-        .video-container video {
-            width: 100%;
-            max-width: 900px;
-            border-radius: 4px;
-            outline: none;
+        .section-item {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            text-decoration: none;
+            color: #fff;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        .section-item:first-child {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-item:hover {
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .section-number {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.35);
+            flex-shrink: 0;
+        }
+
+        .section-info {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            margin-bottom: 4px;
+        }
+
+        .section-desc {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .section-arrow {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.35);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .section-item:hover .section-arrow {
+            color: #fff;
+            transform: translateX(4px);
         }
 
         @media (max-width: 480px) {
@@ -94,14 +135,18 @@
             <div class="title-section">
                 <p class="page-number">01</p>
                 <h1 class="page-title">Geschichte</h1>
-                <p class="page-subtitle">Die Französische Revolution</p>
             </div>
         </div>
 
-        <div class="video-container">
-            <video controls playsinline>
-                <source src="Französische_Revolution.mp4" type="video/mp4">
-            </video>
+        <div class="content">
+            <a href="https://youtu.be/tFk7QVXZjw8" target="_blank" rel="noopener" class="section-item">
+                <span class="section-number">01.1</span>
+                <div class="section-info">
+                    <p class="section-title">Erklärvideo</p>
+                    <p class="section-desc">Die Französische Revolution</p>
+                </div>
+                <span class="section-arrow">→</span>
+            </a>
         </div>
     </div>
 </body>
