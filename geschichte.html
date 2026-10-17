@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caro – Geschichte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 48px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .back {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back:hover { color: #fff; }
+
+        .title-section {
+            text-align: right;
+        }
+
+        .page-number {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.35);
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 300;
+            letter-spacing: -0.01em;
+        }
+
+        .page-subtitle {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 6px;
+        }
+
+        .video-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        @media (max-width: 480px) {
+            .page { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <a href="index.html" class="back">← Zurück</a>
+            <div class="title-section">
+                <p class="page-number">01</p>
+                <h1 class="page-title">Geschichte</h1>
+                <p class="page-subtitle">Die Französische Revolution</p>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <video controls playsinline>
+                <source src="Französische_Revolution.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+</html>

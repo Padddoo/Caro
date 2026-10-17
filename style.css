@@ -145,7 +145,7 @@ html, body {
     gap: 10px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
-    cursor: default;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
